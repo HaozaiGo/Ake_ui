@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>akeTable/akeTable.vue - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-AKETable.html">AKETable</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeForm.html">akeForm</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeFormItem.html">akeFormItem</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable2.html">akeTable2</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable3.html">akeTable3</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable3-special.html">akeTable3-special</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-%25E6%2589%2593%25E5%258D%25B0%25E7%25BB%2584%25E4%25BB%25B6.html">打印组件</a></span></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:DblclckRow-%25E5%258F%258C%25E5%2587%25BB%25E8%25A1%258C%25E8%25A7%25A6%25E5%258F%2591%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595">DblclckRow - 双击行触发的方法</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-AKETable.html#~event:cellClick-%25E5%258D%2595%25E5%2587%25BB%25E5%258D%2595%25E5%2585%2583%25E6%25A0%25BC">cellClick - 单击单元格</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeForm.html#~event:change-%25E6%258F%2590%25E4%25BA%25A4%25E8%25A1%25A8%25E5%258D%2595">change - 提交表单</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable2.html#~event:clickRow-%25E7%2582%25B9%25E5%2587%25BB%25E8%25A1%258C%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">clickRow - 点击行时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:clickRow-%25E7%2582%25B9%25E5%2587%25BB%25E8%25A1%258C%25E8%25A7%25A6%25E5%258F%2591%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595">clickRow - 点击行触发的方法</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeForm.html#~event:closeDialog-%25E5%25BC%25B9%25E7%25AA%2597%25E5%2585%25B3%25E9%2597%25AD">closeDialog - 弹窗关闭</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:handleCurrentChange-%25E6%25AF%258F%25E9%25A1%25B5%25E6%2598%25BE%25E7%25A4%25BA%25E9%25A1%25B5%25E6%2595%25B0%25E6%2594%25B9%25E5%258F%2598%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">handleCurrentChange - 每页显示页数改变时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:handleSelectionChange-%25E5%258B%25BE%25E9%2580%2589%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">handleSelectionChange - 勾选时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:handleSizeChange-%25E6%25AF%258F%25E9%25A1%25B5%25E6%2598%25BE%25E7%25A4%25BA%25E6%259D%25A1%25E6%2595%25B0%25E6%2594%25B9%25E5%258F%2598%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">handleSizeChange - 每页显示条数改变时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeFormItem.html#~event:justify-%25E8%25A1%25A8%25E5%258D%2595%25E6%25A0%25A1%25E9%25AA%258C">justify - 表单校验</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeFormItem.html#~event:resetFields-%25E8%25A1%25A8%25E5%258D%2595%25E9%2587%258D%25E7%25BD%25AE">resetFields - 表单重置</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-AKETable.html#~event:sortChange-%25E6%258E%2592%25E5%25BA%258F">sortChange - 排序</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeForm.html#~event:submit-%25E6%258F%2590%25E4%25BA%25A4%25E8%25A1%25A8%25E5%258D%2595">submit - 提交表单</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">akeTable/akeTable.vue</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+&lt;template>
+  &lt;div class="akeTableParent" @click="divCkick($event)">
+    &lt;div class="tableColum" @click="cardShow = false">
+      &lt;slot name="header" class="tableHeader">&lt;/slot>
+      &lt;!-- &lt;i @click="cardShow = !cardShow" class="el-icon-more">&lt;/i> -->
+
+      &lt;div class="header-right">
+        &lt;slot name="header-right">&lt;/slot>
+        &lt;el-tooltip class="item" effect="dark" content="排序" placement="top">
+          &lt;i class="iconfont iconshaixuan1 tableICON" @click.stop="cardShow = !cardShow" v-if="sortShow">&lt;/i>
+        &lt;/el-tooltip>
+      &lt;/div>
+    &lt;/div>
+    &lt;el-card v-show="cardShow" class="box-card" ref="tableCard" style="overflow: auto"
+      :style="{ height: OverallHeight - 100 + 'px' }">
+    &lt;!-- &lt;div slot="header" class="clearfix">
+          &lt;span>卡片名称&lt;/span>
+            &lt;el-button style="float: right; padding: 3px 0" type="text">操作按钮&lt;/el-button>
+            &lt;/div>-->
+      &lt;div v-for="(tr, index) in tableList.tr" :key="index" class="text item">
+        &lt;div>
+          &lt;el-checkbox v-model="tr.isShow">{{ tr.label }}&lt;/el-checkbox>
+          &lt;i class="iconfont iconfanhui-copy-copy tableICON" v-show="index > 0" @click="TableColumnUp(index)">&lt;/i>
+          &lt;i class="iconfont iconfanhui-copy-copy-copy tableICON" v-show="tableList.tr.length - 1 > index"
+            @click="TableColumnDown(index)">&lt;/i>
+        &lt;/div>
+      &lt;/div>
+      &lt;div v-if="sessionStroageSetting" style="
+                border-top: 1px solid rgb(205, 206, 213);
+                padding: 10px;
+                text-align: center;
+              ">
+        &lt;el-button type="primary" style="background: #3477fe; color: #363636" plain
+          @click="sessionStroageConfirm">确认&lt;/el-button>
+        &lt;el-button type="primary" style="background: rgb(245, 245, 245); color: #363636" plain
+          @click="sessionStroageCancel">返回&lt;/el-button>
+      &lt;/div>
+    &lt;/el-card>
+    &lt;!--   @select="select" -->
+    &lt;el-table highlight-current-row ref="multipleTable" :data="tableList.tableData" @current-change="TableCurrentChange"
+      :key="tableKey" :style="{ width: width }" border stripe v-loading="loading" @row-dblclick="DblclckRow"
+      @header-dragend="dragend" :height="tableHeight" @selection-change="handleSelectionChange"
+      @expand-change="expandChange" :show-summary="showSummary" @sort-change="sortChange">
+      &lt;slot name="expand">&lt;/slot>
+      &lt;div slot="empty">
+        &lt;div>
+          &lt;div v-if="!loading">
+            &lt;img style="width: 150px; height: 110px" src="@/assets/empty.png" />
+            &lt;span style="
+                      display: block;
+                      font-size: 22px;
+                      font-weight: 600;
+                      margin-top: -25px;
+                    ">暂无数据&lt;/span>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;el-table-column v-if="needIndex" type="index" width="49" fixed="left" :index="indexMethod" :label="'序号'">
+      &lt;/el-table-column>
+      &lt;el-table-column v-if="checkbox" align="center" :selectable="checkboxT" fixed="left" type="selection"
+        width="50">&lt;/el-table-column>
+      &lt;template v-for="(tableColumn, index) in tableList.tr">
+        &lt;!-- 如果是input类型 -->
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn" v-if="tableColumn.isShow &amp;&amp; tableColumn.type">
+          &lt;template slot-scope="scope">
+            &lt;template v-if="tableColumn.type === 'input'">
+              &lt;span v-if="scope.row.disabled">{{
+                scope.row[tableColumn.prop]
+              }}&lt;/span>
+              &lt;el-input v-else type="text" :disabled="scope.row.disabled" v-model="scope.row[tableColumn.prop]" @change="
+                () => {
+                  $emit('changeInput', scope.row[tableColumn.prop]);
+                }
+              ">&lt;/el-input>
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'number'">
+              &lt;span v-if="scope.row.disabled">{{
+                scope.row[tableColumn.prop]
+              }}&lt;/span>
+              &lt;el-input v-else type="number" :disabled="scope.row.disabled" v-model="scope.row[tableColumn.prop]" @change="
+                () => {
+                  $emit('changeInput', scope.row[tableColumn.prop]);
+                }
+              ">&lt;/el-input>
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'flagRad'">
+              &lt;div :style="{ color: scope.row.isRead ? 'red' : 'black' }">
+                {{ scope.row[tableColumn.prop] }}
+              &lt;/div>
+            &lt;/template>
+            &lt;!-- 如果是Popover费用组成类型 -->
+            &lt;template v-if="tableColumn.type === 'popoverCostCompose'">
+              &lt;el-popover placement="bottom-end" width="400" trigger="hover">
+                &lt;div slot="reference">
+                  &lt;div>
+                    &lt;span v-if="!isEmpty(scope.row.priceDetailData.third)">水资源税：固定单价
+                    &lt;!-- {{
+                    scope.row["priceDetailData"].third.priceMode &amp;&amp;
+                    scope.row["priceDetailData"].third.priceMode == 2
+                      ? "阶梯算法"
+                        : "固定单价"
+                      }} -->
+                      {{ "(" }}{{ scope.row["priceDetailData"].third.price1
+                      }}{{ "元)" }}&lt;/span>
+                    &lt;span v-if="!isEmpty(scope.row.priceDetailData.second)">污水费：固定单价
+                    &lt;!-- {{
+                    scope.row["priceDetailData"].second.priceMode &amp;&amp;
+                    scope.row["priceDetailData"].second.priceMode == 2
+                      ? "阶梯算法"
+                      : 
+                        "固定单价"
+                      }} -->
+                      {{ "(" }}{{ scope.row["priceDetailData"].second.price1
+                      }}{{ "元)" }}&lt;/span>
+                  &lt;/div>
+                  &lt;div>
+                    基本水费：
+                    {{
+                      scope.row["priceDetailData"].first.priceMode &amp;&amp;
+                      scope.row["priceDetailData"].first.priceMode == 2
+                      ? "阶梯算法"
+                      : "固定单价"
+                    }}{{ "("
+}}{{
+  scope.row["priceDetailData"].first.priceMode == 1 &amp;&amp;
+  scope.row["priceDetailData"].first.price1 != "0"
+  ? scope.row["priceDetailData"].first.price1 + "元"
+  : scope.row["priceDetailData"].first.peopleRelevent == 1
+    ? "与阶梯人口数关联"
+    : "与阶梯人口数不关联"
+}}{{ ")" }}
+                  &lt;/div>
+                &lt;/div>
+                &lt;div>
+                  &lt;div>
+                    &lt;span v-if="!isEmpty(scope.row.priceDetailData.third)" style="margin-right: 10px">水资源税：固定单价 {{ "("
+                    }}{{ scope.row["priceDetailData"].third.price1
+}}{{ "元)" }}&lt;/span>
+                    &lt;span v-if="!isEmpty(scope.row.priceDetailData.second)">污水费：固定单价 {{ "("
+                    }}{{ scope.row["priceDetailData"].second.price1
+}}{{ "元)" }}&lt;/span>
+                  &lt;/div>
+                  &lt;div>
+                    基本水费：
+                    {{
+                      scope.row["priceDetailData"].first.priceMode &amp;&amp;
+                      scope.row["priceDetailData"].first.priceMode == 2
+                      ? "阶梯算法"
+                      : "固定单价"
+                    }}{{ "("
+}}{{
+  scope.row["priceDetailData"].first.priceMode == 1 &amp;&amp;
+  scope.row["priceDetailData"].first.price1 != "0"
+  ? scope.row["priceDetailData"].first.price1 + "元"
+  : scope.row["priceDetailData"].first.peopleRelevent == 1
+    ? "与阶梯人口数关联"
+    : "与阶梯人口数不关联"
+}}{{ ")" }}
+                  &lt;/div>
+                  &lt;div v-if="
+                    scope.row.priceDetailData.first &amp;&amp;
+                    scope.row.priceDetailData.first.priceMode == 2
+                  ">
+                    &lt;div>
+                      &lt;span style="margin-right: 10px">阶梯起始时间：{{
+                        scope.row.priceDetailData.first.grdStartDate
+                      }}&lt;/span>
+                      &lt;span>阶梯周期：{{
+                        scope.row.priceDetailData.first.grdPeriodLabel
+                      }}&lt;/span>
+                    &lt;/div>
+                    &lt;table border="0" cellspacing="0" width="300px">
+                      &lt;tr>
+                        &lt;td>&lt;/td>
+                        &lt;td>用水上限（m³）&lt;/td>
+                        &lt;td>单价（元）&lt;/td>
+                      &lt;/tr>
+                      &lt;tr>
+                        &lt;td>第一阶梯&lt;/td>
+                        &lt;td>{{ scope.row.priceDetailData.first.grdQty1 }}&lt;/td>
+                        &lt;td>{{ scope.row.priceDetailData.first.grdPrice1 }}&lt;/td>
+                      &lt;/tr>
+                      &lt;tr>
+                        &lt;td>第二阶梯&lt;/td>
+                        &lt;td>{{ scope.row.priceDetailData.first.grdQty2 }}&lt;/td>
+                        &lt;td>{{ scope.row.priceDetailData.first.grdPrice2 }}&lt;/td>
+                      &lt;/tr>
+                      &lt;tr>
+                        &lt;td>第三阶梯&lt;/td>
+                        &lt;td>{{ scope.row.priceDetailData.first.grdQty3 }}&lt;/td>
+                        &lt;td>{{ scope.row.priceDetailData.first.grdPrice3 }}&lt;/td>
+                      &lt;/tr>
+                    &lt;/table>
+                  &lt;/div>
+                &lt;/div>
+              &lt;/el-popover>
+            &lt;/template>
+            &lt;!-- 如果是Popover审核状态类型 -->
+            &lt;template v-if="tableColumn.type === 'approvalStatusDictText'">
+              &lt;span v-if="scope.row.approvalStatusDictText != '审核不通过'">{{
+                scope.row.approvalStatusDictText
+              }}&lt;/span>
+              &lt;el-popover v-else placement="bottom-end" width="400" trigger="click">
+                &lt;div slot="reference">
+                  &lt;div>
+                    &lt;span style="color: red">
+                      {{ scope.row.approvalStatusDictText }}&lt;/span>&lt;i class="el-icon-warning el-icon--right"
+                      style="color: red; font-size: 16px">&lt;/i>
+                  &lt;/div>
+                &lt;/div>
+                &lt;div>
+                  &lt;div style="color: rgb(217, 0, 27)">审核不通过原因&lt;/div>
+                  &lt;div>{{ scope.row.remark }}&lt;/div>
+                &lt;/div>
+              &lt;/el-popover>
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'flagRad'">
+              &lt;div :style="{ color: scope.row.isRead ? 'red' : 'black' }">
+                {{ scope.row[tableColumn.prop] }}
+              &lt;/div>
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'avgNum'">
+              {{
+                ((scope.row.temp1 === "" ? 0 : parseInt(scope.row.temp1)) +
+                  (scope.row.temp2 === "" ? 0 : parseInt(scope.row.temp2)) +
+                  (scope.row.temp3 === "" ? 0 : parseInt(scope.row.temp3))) /
+                (scope.row.temp1 !== "" &amp;&amp;
+                  scope.row.temp2 !== "" &amp;&amp;
+                  scope.row.temp3 !== ""
+                  ? 3
+                  : scope.row.temp1 !== "" &amp;&amp;
+                    scope.row.temp2 !== "" &amp;&amp;
+                    scope.row.temp3 === ""
+                    ? 2
+                    : scope.row.temp1 !== "" &amp;&amp;
+                      scope.row.temp2 === "" &amp;&amp;
+                      scope.row.temp3 !== ""
+                      ? 2
+                      : scope.row.temp1 === "" &amp;&amp;
+                        scope.row.temp2 !== "" &amp;&amp;
+                        scope.row.temp3 !== ""
+                        ? 2
+                        : scope.row.temp1 === "" &amp;&amp;
+                          scope.row.temp2 === "" &amp;&amp;
+                          scope.row.temp3 !== ""
+                          ? 1
+                          : scope.row.temp1 === "" &amp;&amp;
+                            scope.row.temp2 !== "" &amp;&amp;
+                            scope.row.temp3 === ""
+                            ? 1
+                            : scope.row.temp1 !== "" &amp;&amp;
+                              scope.row.temp2 === "" &amp;&amp;
+                              scope.row.temp3 === ""
+                              ? 1
+                              : 1)
+                ? parseInt(
+                  ((scope.row.temp1 === ""
+                    ? 0
+                    : parseInt(scope.row.temp1)) +
+                    (scope.row.temp2 === ""
+                      ? 0
+                      : parseInt(scope.row.temp2)) +
+                    (scope.row.temp3 === ""
+                      ? 0
+                      : parseInt(scope.row.temp3))) /
+                  (scope.row.temp1 !== "" &amp;&amp;
+                    scope.row.temp2 !== "" &amp;&amp;
+                    scope.row.temp3 !== ""
+                    ? 3
+                    : scope.row.temp1 !== "" &amp;&amp;
+                      scope.row.temp2 !== "" &amp;&amp;
+                      scope.row.temp3 === ""
+                      ? 2
+                      : scope.row.temp1 !== "" &amp;&amp;
+                        scope.row.temp2 === "" &amp;&amp;
+                        scope.row.temp3 !== ""
+                        ? 2
+                        : scope.row.temp1 === "" &amp;&amp;
+                          scope.row.temp2 !== "" &amp;&amp;
+                          scope.row.temp3 !== ""
+                          ? 2
+                          : scope.row.temp1 === "" &amp;&amp;
+                            scope.row.temp2 === "" &amp;&amp;
+                            scope.row.temp3 !== ""
+                            ? 1
+                            : scope.row.temp1 === "" &amp;&amp;
+                              scope.row.temp2 !== "" &amp;&amp;
+                              scope.row.temp3 === ""
+                              ? 1
+                              : scope.row.temp1 !== "" &amp;&amp;
+                                scope.row.temp2 === "" &amp;&amp;
+                                scope.row.temp3 === ""
+                                ? 1
+                                : 1)
+                ).toFixed(1)
+                : 0
+              }}
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'column'">
+              &lt;div>
+                {{
+                  scope.row[tableColumn.prop.split(",")[0]]
+                  ? scope.row[tableColumn.prop.split(",")[0]]
+                  : "--"
+                }}
+              &lt;/div>
+              &lt;div>
+                {{
+                  scope.row[tableColumn.prop.split(",")[1]]
+                  ? scope.row[tableColumn.prop.split(",")[1]]
+                  : "--"
+                }}
+              &lt;/div>
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'unit'">
+              {{ scope.row[tableColumn.prop.split(",")[0]] }}
+              {{ scope.row[tableColumn.prop.split(",")[1]] }}
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'click'">
+              &lt;div style="color: #1b90ff; cursor: pointer" @click="
+                clickTableBtn({ row: scope.row, label: tableColumn.label })
+              ">
+                {{ scope.row[tableColumn.prop.split(",")[0]] }}
+              &lt;/div>
+            &lt;/template>
+            &lt;template v-if="tableColumn.type === 'date'">
+              &lt;el-date-picker v-model="scope.row[tableColumn.prop]" type="datetime" placeholder="选择日期时间"
+                value-format="yyyy-MM-dd HH:mm:ss" style="width: 200px">
+              &lt;/el-date-picker>
+            &lt;/template>
+            &lt;template v-else-if="tableColumn.type === 'select'">
+              &lt;template v-if="sessionStroageName == 'six/Three2'">
+                &lt;template v-if="tableColumn.prop == 'unit'">
+                  &lt;!-- {{scope.row[tableColumn.assetTypeCode]}} -->
+                  &lt;el-select v-model="scope.row[tableColumn.prop]" placeholder="请选择"
+                    :disabled="scope.row.assetTypeCode != '1034'">
+                    &lt;el-option v-for="item in tableColumn.select" :key="item[tableColumn.selectValue]"
+                      :label="item[tableColumn.selectName]" :value="
+                        /^\d+(\.\d+)?$/.test(item[tableColumn.selectValue])
+                          ? Number(item[tableColumn.selectValue])
+                          : item[tableColumn.selectValue]
+                      ">&lt;/el-option>
+                  &lt;/el-select>
+                &lt;/template>
+                &lt;template v-else>
+                  &lt;el-select v-model="scope.row[tableColumn.prop]" placeholder="请选择">
+                    &lt;el-option v-for="item in tableColumn.select" :key="item[tableColumn.selectValue]"
+                      :label="item[tableColumn.selectName]" :value="
+                        /^\d+(\.\d+)?$/.test(item[tableColumn.selectValue])
+                          ? Number(item[tableColumn.selectValue])
+                          : item[tableColumn.selectValue]
+                      ">&lt;/el-option>
+                  &lt;/el-select>
+                &lt;/template>
+              &lt;/template>
+              &lt;template v-else>
+                &lt;el-select v-model="scope.row[tableColumn.prop]" placeholder="请选择">
+                  &lt;el-option v-for="item in tableColumn.select" :key="item[tableColumn.selectValue]"
+                    :label="item[tableColumn.selectName]" :value="
+                      /^\d+(\.\d+)?$/.test(item[tableColumn.selectValue])
+                        ? Number(item[tableColumn.selectValue])
+                        : item[tableColumn.selectValue]
+                    ">&lt;/el-option>
+                &lt;/el-select>
+              &lt;/template>
+            &lt;/template>
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 如果是sex的话 自动转换 -->
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn"
+          v-else-if="tableColumn.isShow &amp;&amp; tableColumn.prop == 'sex'">
+          &lt;template slot-scope="scope">{{
+            scope.row.sex == 1 ? "男" : "女"
+          }}&lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 如果是要有多个值一起显示 ~ -->
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn" :show-overflow-tooltip="true" min-width="120px"
+          v-else-if="
+            !tableColumn.Fixed &amp;&amp;
+            tableColumn.isShow &amp;&amp;
+            tableColumn.prop.indexOf('~') >= 0
+          ">
+          &lt;template slot-scope="scope">
+            {{ scope.row[tableColumn.prop.split("~")[0]] }}
+            &lt;span style="color: #363636">
+              &lt;br v-if="tableColumn.prop.split('~').length >= 2" />
+              {{ scope.row[tableColumn.prop.split("~")[1]] }}
+            &lt;/span>
+            &lt;br v-if="tableColumn.prop.split('~').length >= 3" />
+            {{ scope.row[tableColumn.prop.split("~")[2]] }}
+            &lt;br v-if="tableColumn.prop.split('~').length >= 4" />
+            {{ scope.row[tableColumn.prop.split("~")[3]] }}
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn" min-width="120px"
+          v-else-if="tableColumn.isShow &amp;&amp; tableColumn.prop.indexOf(',') >= 0">
+          &lt;template slot-scope="scope">
+            {{
+              scope.row[tableColumn.prop.split(",")[0]]
+              ? scope.row[tableColumn.prop.split(",")[0]]
+              : ""
+            }}&amp;nbsp;/&amp;nbsp;{{
+  scope.row[tableColumn.prop.split(",")[1]]
+  ? scope.row[tableColumn.prop.split(",")[1]]
+  : ""
+}}&amp;nbsp;/&amp;nbsp;{{
+  scope.row[tableColumn.prop.split(",")[2]]
+  ? scope.row[tableColumn.prop.split(",")[2]]
+  : ""
+}}&amp;nbsp;/&amp;nbsp;{{
+  scope.row[tableColumn.prop.split(",")[3]]
+  ? scope.row[tableColumn.prop.split(",")[3]]
+  : ""
+}}
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 如果是要有多个值一起显示 - -->
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn" min-width="120px"
+          v-else-if="tableColumn.isShow &amp;&amp; tableColumn.prop.indexOf('-') >= 0">
+          &lt;template slot-scope="scope">
+            {{ scope.row[tableColumn.prop.split("-")[0]] }}&amp;nbsp;-&amp;nbsp;{{
+              scope.row[tableColumn.prop.split("-")[1]]
+            }}
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 如果是要有多个值一起显示 &amp; -->
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn" min-width="120px"
+          v-else-if="tableColumn.isShow &amp;&amp; tableColumn.prop.indexOf('&amp;') >= 0">
+          &lt;template slot-scope="scope">
+            &lt;div style="text-algin: center">
+              {{
+                scope.row[tableColumn.prop.split("&amp;")[0]]
+                ? scope.row[tableColumn.prop.split("&amp;")[0]]
+                : "--"
+              }}
+            &lt;/div>
+            &lt;div style="text-algin: center">
+              {{
+                scope.row[tableColumn.prop.split("&amp;")[1]]
+                ? scope.row[tableColumn.prop.split("&amp;")[1]]
+                : "--"
+              }}
+            &lt;/div>
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 如果是要有多个值一起显示 ( -->
+        &lt;el-table-column :key="index" align="center" v-bind="tableColumn" min-width="120px"
+          v-else-if="tableColumn.prop.indexOf('(') >= 0">
+          &lt;template slot-scope="scope">
+            &lt;div style="text-algin: center">
+              {{
+                scope.row[tableColumn.prop.split("(")[0]]
+                ? scope.row[tableColumn.prop.split("(")[0]]
+                : "--"
+              }}
+              (
+              &lt;span :style="{
+                color:
+                  scope.row[tableColumn.prop.split('(')[0] + 'Color'] ==
+                    'black'
+                    ? '#000'
+                    : scope.row[tableColumn.prop.split('(')[0] + 'Color'] ==
+                      'red'
+                      ? '#f56c6c!important'
+                      : scope.row[tableColumn.prop.split('(')[0] + 'Color'] ==
+                        '#f56c6c'
+                        ? '#f56c6c!important'
+                        : scope.row[tableColumn.prop.split('(')[0] + 'Color'] ==
+                          'green'
+                          ? '#32C5FF!important'
+                          : scope.row[tableColumn.prop.split('(')[0] + 'Color'] ==
+                            '#32C5FF'
+                            ? '#32C5FF!important'
+                            : scope.row[tableColumn.prop.split('(')[0] + 'Color'] ==
+                              'orange'
+                              ? 'orange'
+                              : '#000',
+              }">
+                {{ scope.row[tableColumn.prop.split("(")[1]] }}&lt;/span>
+              )
+            &lt;/div>
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 判断是否显示 -->
+        &lt;el-table-column :key="index" align="left" v-bind="tableColumn"
+          v-else-if="tableColumn.readingStatus &amp;&amp; tableColumn.isShow" :show-overflow-tooltip="true">
+          &lt;template slot-scope="scope">
+            &lt;div style="text-algin: center">
+              &lt;div class="overTime flex">
+                &lt;span :style="{
+                  color:
+                    scope.row[tableColumn.prop + 'Color'] == 'black'
+                      ? '#000'
+                      : scope.row[tableColumn.prop + 'Color'] == 'red'
+                        ? '#f56c6c!important'
+                        : scope.row[tableColumn.prop + 'Color'] == 'blue'
+                          ? '#0c9bf0!important'
+                          : scope.row[tableColumn.prop + 'Color'] == 'green'
+                            ? '#22ec25!important'
+                            : scope.row[tableColumn.prop + 'Color'] == 'purple'
+                              ? '#6A5ACD'
+                              : scope.row[tableColumn.prop + 'Color'] == 'gray'
+                                ? '#c1c1c1'
+                                : '#363636 ',
+                }">{{ scope.row[tableColumn.prop] }}&lt;/span>
+
+                &lt;!-- &lt;i class="el-icon-time" style="mragin-right:10px">&lt;/i>  -->
+                &lt;span v-if="scope.row[tableColumn.status] == '2'" style="height: 18px; margin-left: 8px">
+                  &lt;el-tooltip class="item" effect="dark" :content="scope.row[tableColumn.remark]" placement="bottom">
+                    &lt;img :src="img" alt="" srcset="" style="width: 18px; height: 18px" />
+                  &lt;/el-tooltip>
+                &lt;/span>
+              &lt;/div>
+            &lt;/div>
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;el-table-column :key="index" align="left" v-bind="tableColumn" v-else-if="tableColumn.isShow"
+          :show-overflow-tooltip="true" :fixed="tableColumn.Fixed == undefined ? false : tableColumn.Fixed"
+          :scoped-slot="brheader">
+          &lt;!-- 如果是要有多个值一起显示 -->
+          &lt;template slot-scope="scope">
+            &lt;div :style="{
+              color:
+                scope.row[tableColumn.prop + 'Color'] == 'black'
+                  ? '#c1c1c1'
+                  : scope.row[tableColumn.prop + 'Color'] == 'red'
+                    ? '#f56c6c!important'
+                    : scope.row[tableColumn.prop + 'Color'] == '#f56c6c'
+                      ? '#f56c6c!important'
+                      : scope.row[tableColumn.prop + 'Color'] == 'green'
+                        ? '#32C5FF!important'
+                        : scope.row[tableColumn.prop + 'Color'] == '#32C5FF'
+                          ? '#32C5FF!important'
+                          : scope.row[tableColumn.prop + 'Color'] == 'orange'
+                            ? 'orange'
+                            : '#c1c1c1',
+            }">
+              &lt;span :class="[tableColumn.clickFlag ? 'cell-click' : '']" size="mini"
+                @click="cellClick(tableColumn.clickFlag, scope)">
+                {{ scope.row[tableColumn.prop.split("~")[0]] }}
+              &lt;/span>
+              &lt;span>
+                &lt;br v-if="tableColumn.prop.split('~').length >= 2" />
+                {{ scope.row[tableColumn.prop.split("~")[1]] }}
+              &lt;/span>
+              &lt;br v-if="tableColumn.prop.split('~').length >= 3" />
+              {{ scope.row[tableColumn.prop.split("~")[2]] }}
+              &lt;br v-if="tableColumn.prop.split('~').length >= 4" />
+              {{ scope.row[tableColumn.prop.split("~")[3]] }}
+              &lt;!-- {{ scope.row[tableColumn.prop] }} -->
+            &lt;/div>
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- 判断是否显示 -->
+
+      &lt;!-- &lt;el-table-column
+            :key="index"
+            align="center"
+            v-bind="tableColumn"
+            v-else-if="tableColumn.isShow"
+            :fixed="tableColumn.Fixed == undefined ? false : tableColumn.Fixed"
+              :render-header="brheader"
+              >&lt;/el-table-column>-->
+      &lt;/template>
+      &lt;slot name="operating">&lt;/slot>
+    &lt;/el-table>
+    &lt;div class="block" v-if="paginaShow">
+      &lt;el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage"
+        :page-sizes="[30, 50, 100, 200, 500]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper"
+        :total="total">&lt;/el-pagination>
+    &lt;/div>
+  &lt;/div>
+&lt;/template>
+
+&lt;script>
+import { mapGetters } from "vuex";
+import { isEmpty } from "lodash";
+// import { sysPageColumnUpdate } from "@/api/index.js";
+
+import variables from "@/styles/variables.scss";
+/**
+  * AKETable.
+  * @module AKETable
+  * @see module:AKETable
+  * @example 
+  * tableList: {
+      tableData: {
+        type: Array,
+        default: [],
+      },
+      tr: {
+        type: Array,
+        default: [],
+      },
+    },
+    // 每个table的名字，用于存储table的排序和列宽度
+    sessionStroageName: {
+      type: String,
+    },
+    // 总条数
+    total: {
+      type: Number,
+      default: 0,
+    },
+    // 页数
+    currentPage: {
+      type: Number,
+      default: 1,
+    },
+    // 每页条数
+    currentSize: {
+      type: Number,
+    },
+    // 分页条数
+    pageSize: {
+      type: Number,
+      default: 30,
+    },
+    //是否需要index
+    needIndex: {
+      type: Boolean,
+      default: false,
+    },
+    // 设置table高度
+    height: {
+      default: "",
+    },
+    // 设置table宽度
+    width: {
+      default: "100%",
+    },
+    // 是否有checkbox
+    checkbox: {
+      default: false,
+    },
+    // 是否显示分页
+    paginaShow: {
+      type: Boolean,
+      default: true,
+    },
+    sortShow: {
+      type: Boolean,
+      default: true,
+    },
+    lazy: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    //是否显示表头配置操作
+    sessionStroageSetting: {
+      type: Boolean,
+      default: false,
+    },
+    // 合计
+    showSummary: {
+      type: Boolean,
+      default: false,
+    },
+  * 
+*/
+
+export default {
+  name: 'akeTable',
+  props: {
+
+    // table的数据
+    tableList: {
+      tableData: {
+        type: Array,
+        default: [],
+      },
+      tr: {
+        type: Array,
+        default: [],
+      },
+    },
+    // 每个table的名字，用于存储table的排序和列宽度
+    sessionStroageName: {
+      type: String,
+    },
+    // 总条数
+    total: {
+      type: Number,
+      default: 0,
+    },
+    // 页数
+    currentPage: {
+      type: Number,
+      default: 1,
+    },
+    // 每页条数
+    currentSize: {
+      type: Number,
+    },
+    // 分页条数
+    pageSize: {
+      type: Number,
+      default: 30,
+    },
+    //是否需要index
+    needIndex: {
+      type: Boolean,
+      default: false,
+    },
+    // 设置table高度
+    height: {
+      default: "",
+    },
+    // 设置table宽度
+    width: {
+      default: "100%",
+    },
+    // 是否有checkbox
+    checkbox: {
+      default: false,
+    },
+    // 是否显示分页
+    paginaShow: {
+      type: Boolean,
+      default: true,
+    },
+    sortShow: {
+      type: Boolean,
+      default: true,
+    },
+    lazy: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    //是否显示表头配置操作
+    sessionStroageSetting: {
+      type: Boolean,
+      default: false,
+    },
+    // 合计
+    showSummary: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      tableKey: true,
+      img: require("@/assets/sigh.png"),
+      cardShow: false,
+      tableHeight: "",
+      // iconUrl:require('./../../static/yuandian.png')
+    };
+  },
+  computed: {
+    ...mapGetters({
+      collapse: "settings/collapse",
+      OverallHeight: "settings/OverallHeight",
+    }),
+  },
+  updated() {
+    this.$nextTick(() => {
+      this.$refs.multipleTable.doLayout();
+    });
+  },
+  beforeMount: function () {
+    // 如果有传高度,那么使用传入高度
+    // 如果没有传入,那么使用缓存高度
+    if (this.height) {
+      this.tableHeight = this.height;
+    } else {
+      this.tableHeight = this.paginaShow
+        ? this.OverallHeight + "px"
+        : this.OverallHeight + 30 + "px";
+    }
+  },
+
+  methods: {
+    //排序
+     /** 
+    * @event sortChange - 排序
+    */ 
+    sortChange(column, key, order) {
+      this.$emit("sortChange", column);
+    },
+    isEmpty(val) {
+      return isEmpty(val);
+    },
+    // 单击单元格
+     /** 
+    * @event cellClick - 单击单元格
+    * @return {Object} - 返回当前行的数据
+    */ 
+    cellClick(flag, scope) {
+      if (flag) {
+        this.$emit("cellClick", scope.row);
+      }
+    },
+    setHeight() { },
+    // 自定义index
+    indexMethod(index) {
+      if (this.paginaShow) {
+        return (this.currentPage - 1) * this.currentSize + index + 1;
+      } else {
+        return index + 1;
+      }
+    },
+    brheader(h, { column, $index }) {
+      // 表头换行
+      let l = column.label.split("|")[0].length + 2;
+      let f = 16; //每个字大小，其实是每个字的比例值，大概会比字体大小差不多大一点，
+      column.minWidth = f * l; //字大小乘个数即长度 ,注意不要加px像素，这里minWidth只是一个比例值，不是真正的长度 //然后将列标题放在一个div块中，注意块的宽度一定要100%，否则表格显示不完全
+      // return h('div',{class:'table-head',style:{width:'100%'}},[ column.label.split('|')[0]])
+      if (column.label.split("|").length == 1) {
+        return h("span", {}, [
+          h(
+            "span",
+            { class: "table-head", style: { width: "100%" } },
+            column.label.split("|")[0]
+          ),
+          h("span", {}, column.label.split("|")[1]),
+        ]);
+      } else {
+        return h("span", {}, [
+          h(
+            "span",
+            { class: "table-head", style: { width: "100%" } },
+            column.label.split("|")[0]
+          ),
+          h("br"),
+          h("span", {}, column.label.split("|")[1]),
+        ]);
+      }
+    },
+    divCkick(e) {
+      e.stopPropagation();
+    },
+    // 列排序往下
+    TableColumnDown(index) {
+      let temp = this.tableList.tr[index];
+      this.$set(this.tableList.tr, index, this.tableList.tr[index + 1]);
+      this.$set(this.tableList.tr, index + 1, temp);
+      this.tableKey = !this.tableKey;
+    },
+    // 列排序往上
+    TableColumnUp(index) {
+      let temp = this.tableList.tr[index];
+      this.$set(this.tableList.tr, index, this.tableList.tr[index - 1]);
+      this.$set(this.tableList.tr, index - 1, temp);
+      this.tableKey = !this.tableKey;
+    },
+    select(selection, row) {
+      this.$refs.multipleTable.clearSelection();
+      if (selection.length == 0) return;
+      this.$refs.multipleTable.toggleRowSelection(row, true);
+    },
+    // table宽度拖拽
+    dragend(newWidth, oldWidth, column, event) {
+      let prop = column.property;
+      let tableItemWidth = [];
+      for (let i = 0; i &lt; this.tableList.tr.length; i++) {
+        if (this.tableList.tr[i].prop == prop) {
+          this.tableList.tr[i].width = parseInt(newWidth);
+        }
+        tableItemWidth.push({
+          prop: this.tableList.tr[i].prop,
+          width: this.tableList.tr[i].width,
+        });
+      }
+      localStorage.setItem(
+        this.sessionStroageName + "tableWidth",
+        JSON.stringify(tableItemWidth)
+      );
+      setTimeout(() => {
+        this.$refs.multipleTable.doLayout();
+      }, 100);
+    },
+
+    // 点击行触发的方法
+       /** 
+    * @event clickRow - 点击行触发的方法
+    * @return {Object} - 返回当前行的数据
+    */ 
+    clickRow(row) {
+      this.$emit("clickRow", row);
+    },
+    // 双击行触发的方法
+      /** 
+    * @event DblclckRow - 双击行触发的方法
+    * @return {Object} - 返回当前行的数据
+    */ 
+    DblclckRow(row) {
+      this.$emit("DblclckRow", row);
+    },
+    // 获取table排序/是否显示
+    getTableOrder() {
+      let sessionTableItem = localStorage.getItem(this.sessionStroageName);
+      if (sessionTableItem) {
+        // debugger;
+        sessionTableItem = sessionTableItem.split(",");
+        if (sessionTableItem.length) {
+          let temp = [];
+          if (sessionTableItem.length != this.tableList.tr.length) {
+            sessionTableItem = this.tableList.tr.map((item) => {
+              return item.index + "";
+            });
+          }
+          for (let i = 0; i &lt; sessionTableItem.length; i++) {
+            if (sessionTableItem[i].indexOf("!") > -1) {
+              var item = sessionTableItem[i].split("!")[1];
+              for (let j = 0; j &lt; this.tableList.tr.length; j++) {
+                if (item == this.tableList.tr[j].index) {
+                  this.tableList.tr[j].isShow = false;
+                  temp.push(this.tableList.tr[j]);
+                }
+              }
+            } else {
+              for (let j = 0; j &lt; this.tableList.tr.length; j++) {
+                if (sessionTableItem[i] == this.tableList.tr[j].index) {
+                  this.tableList.tr[j].isShow = true;
+                  temp.push(this.tableList.tr[j]);
+                }
+              }
+            }
+          }
+          this.tableList.tr = temp;
+          this.tableHeight = this.height;
+        }
+      }
+    },
+    // 获取表头显示的列
+    getTableColumnOrder() {
+      let newArr = this.tableList.tr
+        .filter((item) => {
+          return item.isShow;
+        })
+        .map((item) => {
+          return item.prop;
+        });
+      return newArr;
+    },
+
+    // 获取table宽度
+    getTablColumneWidth() {
+      let tablColumnList = localStorage.getItem(
+        this.sessionStroageName + "tableWidth"
+      );
+      // 如果有这个缓存,说明修改过，就通过遍历的方法将width的值重新写到tr的width，达到修改列宽度的效果。
+      if (tablColumnList) {
+        tablColumnList = JSON.parse(tablColumnList);
+
+        for (let i = 0; i &lt; tablColumnList.length; i++) {
+          for (let j = 0; j &lt; this.tableList.tr.length; j++) {
+            if (tablColumnList[i].prop == this.tableList.tr[j].prop) {
+              // 直接通过下标修改是不能触发视图修改的。
+              let itemTemp = this.tableList.tr[j];
+              itemTemp.width = tablColumnList[i].width;
+              this.$set(this.tableList.tr, j, itemTemp);
+            }
+          }
+        }
+      }
+    },
+     /** 
+    * @event handleSizeChange - 每页显示条数改变时触发
+    * @return {Number} - 返回当前页码显示条数
+    
+    */ 
+    handleSizeChange(val) {
+      this.$refs.multipleTable.clearSelection();
+      this.$emit("handleSizeChange", val);
+    },
+
+    /** 
+    * @event handleCurrentChange - 每页显示页数改变时触发
+    * @return {Number} - 返回当前页数显示条数
+    
+    */ 
+    handleCurrentChange(val) {
+      this.$refs.multipleTable.clearSelection();
+      this.$emit("handleCurrentChange", val);
+    },
+    // select勾选
+    /** 
+    * @event handleSelectionChange - 勾选时触发
+    * @return {Object} - 返回当前勾选的数据
+    
+    */ 
+    handleSelectionChange(val) {
+      this.$emit("checkboxList", val);
+    },
+    expandChange(val, expandedRows) {
+      // debugger;
+      if (expandedRows.length > 1) {
+        this.$refs.multipleTable.toggleRowExpansion(expandedRows[0]);
+        expandedRows.shift();
+      }
+      this.$emit("expandChange", val);
+    },
+    clickTableBtn(val) {
+      this.$emit("clickTableBtn", val);
+    },
+    TableCurrentChange(val) {
+      this.$emit("TableCurrentChange", val);
+    },
+    checkboxT(row, index) {
+      if (row.checkeddisabled) {
+        return false;
+      }
+      if (row.checked == 0 &amp;&amp; index != 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    toggleSelection(rows) {
+      if (rows) {
+        rows.forEach((row) => {
+          this.$refs.multipleTable.toggleRowSelection(row);
+        });
+      } else {
+        this.$refs.multipleTable.clearSelection();
+      }
+    },
+    // 表头缓存确认按钮
+    sessionStroageConfirm() {
+      let params = {
+        tableKey: this.sessionStroageName,
+        tableValue: localStorage.getItem(this.sessionStroageName),
+      };
+      // sysPageColumnUpdate(params).then((res) => {
+      //   if (res.code === 200) {
+      //     this.$baseMessage(res.msg, "success");
+      //     this.cardShow = false;
+      //   } else {
+      //     this.$baseMessage(res.msg, "error");
+      //   }
+      // });
+    },
+    // 表头缓存收起按钮
+    sessionStroageCancel() {
+      this.cardShow = false;
+    },
+  },
+
+  created() {
+    this.getTableOrder();
+    this.getTablColumneWidth();
+    var that = this;
+    document.onclick = function () {
+      that.cardShow = false;
+    };
+  },
+  mounted() {
+    // 解决滚动条到最下面错位问题
+    this.srcoll = this.$refs.multipleTable.bodyWrapper;
+
+    this.srcoll.addEventListener("scroll", () => {
+      // 距离顶部的距离
+      let scrollTop = this.srcoll.scrollTop;
+      // windowHeight是可视区的高度
+      const windowHeight = this.srcoll.clientHeight;
+      // 变量scrollHeight是滚动条的总高度
+      let scrollHeight = this.srcoll.scrollHeight;
+      // console.log(scrollTop,windowHeight,scrollHeight);
+
+      if (scrollTop + windowHeight === scrollHeight) {
+        this.$refs.multipleTable.doLayout();
+      }
+    });
+  },
+  watch: {
+    sessionStroageName() {
+      this.getTableOrder();
+    },
+    "tableList.tr": {
+      deep: true,
+      handler: function (newVal, oldVal) {
+        // code
+        let sessionTableItem = [];
+        for (let i = 0; i &lt; newVal.length; i++) {
+          if (newVal[i].isShow) {
+            sessionTableItem.push(newVal[i].index);
+          } else {
+            sessionTableItem.push("!" + newVal[i].index);
+          }
+        }
+        localStorage.setItem(this.sessionStroageName, sessionTableItem);
+      },
+    },
+    height(newVal) {
+      this.tableHeight = newVal;
+    },
+    srcoll(val) {
+      console.log(val);
+    },
+  },
+  directives: {
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        // el.focus();
+      },
+    },
+  },
+};
+&lt;/script>
+
+&lt;style scoped lang='scss'>
+.header-right {
+  display: flex;
+  align-items: center;
+
+  >* {
+    margin-left: 0.5em;
+  }
+}
+
+.el-card.box-card.is-always-shadow {
+  right: 1em;
+  position: absolute;
+  z-index: 10000;
+  // height: 80%;
+  // max-height: 80%;
+  overflow: auto;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.item {
+  margin-bottom: 12px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.box-card {
+  display: inline-block;
+}
+
+.tableColum {
+  text-align: left;
+  margin: 0.5em 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 30px;
+  background: #fff0;
+}
+
+.text.item .el-checkbox {
+  margin-right: 5px !important;
+}
+
+.akeTableParent {
+  height: 100%;
+  padding: 5px 13px 5px 5px;
+  background: #fff;
+  position: relative;
+  left: 0px;
+}
+
+.iconfont {
+  vertical-align: sub;
+  font-size: 20px !important;
+  z-index: 1;
+}
+
+.block {
+  display: flex;
+  margin-top: 0em;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.cell-click {
+  color: #0091ff !important;
+  cursor: pointer;
+  border-bottom: 1px solid #0091ff;
+}
+&lt;/style>
+
+&lt;style lang="scss">
+.el-tooltip__popper {
+  background: black !important;
+  color: white !important;
+}
+
+.popper__arrow {
+  // border-color: black !important;
+  // background: black !important;
+  // color: black !important;
+}
+
+.cell.el-tooltip {
+  width: 100% !important;
+}
+
+.tableICON {
+  z-index: 1;
+}
+&lt;/style></code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Mon Apr 03 2023 17:11:36 GMT+0800 (中国标准时间) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

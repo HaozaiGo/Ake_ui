@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>akeTable3-special - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-AKETable.html">AKETable</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeForm.html">akeForm</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeFormItem.html">akeFormItem</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable2.html">akeTable2</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable3.html">akeTable3</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable3-special.html">akeTable3-special</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-%25E6%2589%2593%25E5%258D%25B0%25E7%25BB%2584%25E4%25BB%25B6.html">打印组件</a></span></li><li class="nav-heading">Events</li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:DblclckRow-%25E5%258F%258C%25E5%2587%25BB%25E8%25A1%258C%25E8%25A7%25A6%25E5%258F%2591%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595">DblclckRow - 双击行触发的方法</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-AKETable.html#~event:cellClick-%25E5%258D%2595%25E5%2587%25BB%25E5%258D%2595%25E5%2585%2583%25E6%25A0%25BC">cellClick - 单击单元格</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeForm.html#~event:change-%25E6%258F%2590%25E4%25BA%25A4%25E8%25A1%25A8%25E5%258D%2595">change - 提交表单</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable2.html#~event:clickRow-%25E7%2582%25B9%25E5%2587%25BB%25E8%25A1%258C%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">clickRow - 点击行时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:clickRow-%25E7%2582%25B9%25E5%2587%25BB%25E8%25A1%258C%25E8%25A7%25A6%25E5%258F%2591%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%2595">clickRow - 点击行触发的方法</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeForm.html#~event:closeDialog-%25E5%25BC%25B9%25E7%25AA%2597%25E5%2585%25B3%25E9%2597%25AD">closeDialog - 弹窗关闭</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:handleCurrentChange-%25E6%25AF%258F%25E9%25A1%25B5%25E6%2598%25BE%25E7%25A4%25BA%25E9%25A1%25B5%25E6%2595%25B0%25E6%2594%25B9%25E5%258F%2598%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">handleCurrentChange - 每页显示页数改变时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:handleSelectionChange-%25E5%258B%25BE%25E9%2580%2589%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">handleSelectionChange - 勾选时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeTable3.html#~event:handleSizeChange-%25E6%25AF%258F%25E9%25A1%25B5%25E6%2598%25BE%25E7%25A4%25BA%25E6%259D%25A1%25E6%2595%25B0%25E6%2594%25B9%25E5%258F%2598%25E6%2597%25B6%25E8%25A7%25A6%25E5%258F%2591">handleSizeChange - 每页显示条数改变时触发</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeFormItem.html#~event:justify-%25E8%25A1%25A8%25E5%258D%2595%25E6%25A0%25A1%25E9%25AA%258C">justify - 表单校验</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeFormItem.html#~event:resetFields-%25E8%25A1%25A8%25E5%258D%2595%25E9%2587%258D%25E7%25BD%25AE">resetFields - 表单重置</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-AKETable.html#~event:sortChange-%25E6%258E%2592%25E5%25BA%258F">sortChange - 排序</a></span></li><li class="nav-heading"><span class="nav-item-type type-event">E</span><span class="nav-item-name"><a href="module-akeForm.html#~event:submit-%25E6%258F%2590%25E4%25BA%25A4%25E8%25A1%25A8%25E5%258D%2595">submit - 提交表单</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">akeTable3-special</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="akeTable_akeTable3-special.vue.html">akeTable/akeTable3-special.vue</a>, <a href="akeTable_akeTable3-special.vue.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="prettyprint"><code>showsummary: {
+      type: Boolean,
+      default: true,
+    },
+    // table的数据
+    tableList: {
+      tableData: {
+        type: Array,
+        default: [],
+      },
+      tr: {
+        type: Array,
+        default: [],
+      },
+    },
+    // 每个table的名字，用于存储table的排序和列宽度
+    sessionStroageName: {
+      type: String,
+    },
+    // 总条数
+    total: {
+      type: Number,
+      default: 0,
+    },
+    //是否需要index
+    needIndex: {
+      type: Boolean,
+      default: false,
+    },
+    // 页数
+    currentPage: {
+      type: Number,
+      default: 1,
+    },
+    //一页多少条
+    currentSize: {
+      type: Number,
+    },
+    // 设置table高度
+    height: {
+      default: "",
+    },
+    // 是否有checkbox
+    checkbox: {
+      type: Boolean,
+      default: false,
+    },
+    // 是否显示分页
+    paginaShow: {
+      type: Boolean,
+      default: true,
+    },
+    sortShow: {
+      type: Boolean,
+      default: true,
+    },
+    //默认第一列合并
+    firstname: {
+      type: Boolean,
+      default: false,
+    },
+    merge: {
+      type: Boolean,
+      default: true,
+    },</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Mon Apr 03 2023 17:11:36 GMT+0800 (中国标准时间) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

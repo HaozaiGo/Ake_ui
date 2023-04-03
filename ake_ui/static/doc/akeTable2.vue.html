@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>akeTable2.vue - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-AKETable.html">AKETable</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable2.html">akeTable2</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable3.html">akeTable3</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-akeTable3-special.html">akeTable3-special</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">akeTable2.vue</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+  &lt;div class="akeTableParent" style="position: relative">
+    &lt;div class="tableColum" @click="cardShow = false">
+      &lt;slot name="header" class="tableHeader">&lt;/slot>
+      &lt;!-- &lt;i @click="cardShow = !cardShow" class="el-icon-more">&lt;/i> -->
+
+      &lt;div class="header-right">
+        &lt;slot name="header-right">&lt;/slot>
+        &lt;el-tooltip class="item" effect="dark" content="排序" placement="top">
+          &lt;i
+            class="iconfont iconshaixuan1 tableICON"
+            @click.stop="cardShow = !cardShow"
+            v-if="sortShow"
+          >&lt;/i>
+        &lt;/el-tooltip>
+        &lt;!-- &lt;img
+          src="../assets/yuandian1.jpg"
+          style="width: 16px;"
+          @click="cardShow = !cardShow"
+          v-if="sortShow"
+          alt
+        />-->
+      &lt;/div>
+    &lt;/div>
+    &lt;el-card
+      v-show="cardShow"
+      class="box-card"
+      ref="tableCard"
+      @click="divClick($event)"
+    >
+      &lt;div v-for="(tr, index) in tableList.tr" :key="index" class="text item">
+        &lt;div>
+          &lt;el-checkbox v-model="tr.isShow">{{ tr.label }}&lt;/el-checkbox>
+          &lt;i
+            class="iconfont iconfanhui-copy-copy tableICON"
+            v-show="index > 0"
+            @click="TableColumnUp(index)"
+          >&lt;/i>
+          &lt;i
+            class="iconfont iconfanhui-copy-copy-copy tableICON"
+            v-show="tableList.tr.length - 1 > index"
+            @click="TableColumnDown(index)"
+          >&lt;/i>
+        &lt;/div>
+      &lt;/div>
+      &lt;div
+        v-if="sessionStroageSetting"
+        style="
+          border-top: 1px solid rgb(205, 206, 213);
+          padding: 10px;
+          text-align: center;
+        "
+      >
+        &lt;el-button
+          type="primary"
+          style="background: #3477fe; color: #363636"
+          plain
+          @click="sessionStroageConfirm"
+          >确认&lt;/el-button
+        >
+        &lt;el-button
+          type="primary"
+          style="background: rgb(245, 245, 245); color: #363636"
+          plain
+          @click="sessionStroageCancel"
+          >返回&lt;/el-button
+        >
+      &lt;/div>
+    &lt;/el-card>
+
+    &lt;el-table
+      ref="multipleTable"
+      highlight-current-row
+      :row-key="treeKey"
+      @current-change="clickRow"
+      border
+      stripe
+      :default-expand-all="defaultExpandAll"
+      :expand-row-keys="[1]"
+      :data="tableList.tableData"
+      @header-dragend="dragend"
+      :height="tableHeight"
+      @selection-change="handleSelectionChange"
+    >
+      &lt;div slot="empty">
+        &lt;div>
+          &lt;div>
+            &lt;img
+              style="width: 150px; height: 110px"
+              src="@/assets/empty.png"
+            />
+            &lt;span
+              style="
+                display: block;
+                font-size: 22px;
+                font-weight: 600;
+                margin-top: -25px;
+              "
+              >暂无数据&lt;/span
+            >
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;el-table-column
+        v-if="checkbox"
+        :selectable="checkboxT"
+        fixed="left"
+        type="selection"
+        width="50"
+      >&lt;/el-table-column>
+      &lt;template v-for="(tableColumn, index) in tableList.tr">
+        &lt;!-- 如果是sex的话 自动转换 -->
+        &lt;el-table-column
+          :key="index"
+          v-bind="tableColumn"
+          v-if="tableColumn.isShow &amp;&amp; tableColumn.prop == 'sex'"
+        >
+          &lt;template slot-scope="scope">{{
+            scope.row.sex == 1 ? "男" : "女"
+          }}&lt;/template>
+        &lt;/el-table-column>
+        &lt;el-table-column
+          :key="index"
+          v-bind="tableColumn"
+          v-else-if="tableColumn.isShow &amp;&amp; tableColumn.prop == 'area_type'"
+        >
+          &lt;template slot-scope="scope">{{
+            scope.row.area_type == 1001
+              ? "公司"
+              : scope.row.area_type == 1002
+              ? "热源"
+              : scope.row.area_type == 1003
+              ? "片区"
+              : scope.row.area_type == 1004
+              ? "换热站"
+              : scope.row.area_type == 1005
+              ? "社区"
+              : scope.row.area_type == 1006
+              ? "楼栋"
+              : scope.row.area_type == 1007
+              ? "热力入口"
+              : "--"
+          }}&lt;/template>
+        &lt;/el-table-column>
+        &lt;!-- &lt;table-tree-column :key="index" :treeKey="treeKey" v-bind="tableColumn" v-else-if="tableColumn.isShow &amp;&amp; tableColumn.prop == 'name'">&lt;/table-tree-column> -->
+        &lt;!-- 判断是否显示 -->
+        &lt;el-table-column
+          :key="index"
+          v-bind="tableColumn"
+          align="left"
+          :show-overflow-tooltip="true"
+          v-else-if="tableColumn.isShow &amp;&amp; index == 0"
+        >
+          &lt;template slot-scope="scope">
+            &lt;span
+              v-if="
+                scope.row.children == undefined ||
+                scope.row.children.length == 0
+              "
+            >
+              &lt;!-- &lt;i class="iconfont iconwenjian-copy">&lt;/i> -->
+              {{ scope.row[tableColumn.prop] }}
+            &lt;/span>
+            &lt;span v-else>
+              &lt;!-- &lt;i class="Treeicon el-icon-folder-opened">&lt;/i> -->
+              {{ scope.row[tableColumn.prop] }}
+            &lt;/span>
+          &lt;/template>
+        &lt;/el-table-column>
+        &lt;el-table-column
+          :show-overflow-tooltip="true"
+          :key="index"
+          v-bind="tableColumn"
+          v-else-if="tableColumn.isShow"
+        >&lt;/el-table-column>
+      &lt;/template>
+      &lt;slot name="operating">&lt;/slot>
+    &lt;/el-table>
+    &lt;div class="block" v-if="paginaShow">
+      &lt;el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[3, 50, 100, 200]"
+        :page-size="30"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="total"
+      >&lt;/el-pagination>
+    &lt;/div>
+  &lt;/div>
+&lt;/template>
+
+&lt;script>
+// import { sysPageColumnUpdate } from "@/api/index.js";
+// import TableTreeColumn from "@/views/Core/TableTreeColumn";
+  /**
+* @description: 
+* @module akeTable2
+* @param {*}
+* @param {*}
+* @param {*}
+* @example  // treeId
+    treeKey: {
+      type: String,
+      default: "id",
+    },
+    // table的数据
+    tableList: {
+      tableData: {
+        type: "Array",
+      },
+      tr: {
+        type: "Array",
+      },
+    },
+    // 每个table的名字，用于存储table的排序和列宽度
+    sessionStroageName: {
+      type: String,
+    },
+    // 总条数
+    total: {
+      type: Number,
+      default: 0,
+    },
+    // 页数
+    currentPage: {
+      type: Number,
+      default: 1,
+    },
+    // 设置table高度
+    height: {
+      type: String,
+      default: window.localStorage.getItem("height") - 230 + "px",
+    },
+    // 是否有checkbox
+    checkbox: {
+      type: Boolean,
+      default: false,
+    },
+    // 判断树表是否默认打开
+    defaultExpandAll: {
+      type: Boolean,
+      default: false,
+    },
+    // 是否显示分页
+    paginaShow: {
+      type: Boolean,
+      default: true,
+    },
+    sortShow: {
+      type: Boolean,
+      default: true,
+    },
+    //是否显示表头配置操作
+    sessionStroageSetting: {
+      type: Boolean,
+      default: false,
+    },
+*/ 
+export default {
+  name:"akeTable2",
+  props: {
+    // treeId
+    treeKey: {
+      type: String,
+      default: "id",
+    },
+    // table的数据
+    tableList: {
+      tableData: {
+        type: "Array",
+      },
+      tr: {
+        type: "Array",
+      },
+    },
+    // 每个table的名字，用于存储table的排序和列宽度
+    sessionStroageName: {
+      type: String,
+    },
+    // 总条数
+    total: {
+      type: Number,
+      default: 0,
+    },
+    // 页数
+    currentPage: {
+      type: Number,
+      default: 1,
+    },
+    // 设置table高度
+    height: {
+      type: String,
+      default: window.localStorage.getItem("height") - 230 + "px",
+    },
+    // 是否有checkbox
+    checkbox: {
+      type: Boolean,
+      default: false,
+    },
+    // 判断树表是否默认打开
+    defaultExpandAll: {
+      type: Boolean,
+      default: false,
+    },
+    // 是否显示分页
+    paginaShow: {
+      type: Boolean,
+      default: true,
+    },
+    sortShow: {
+      type: Boolean,
+      default: true,
+    },
+    //是否显示表头配置操作
+    sessionStroageSetting: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  components: {
+    // TableTreeColumn
+  },
+  data() {
+    return {
+      cardShow: false,
+      tableHeight: "",
+    };
+  },
+  beforeMount: function () {
+    // 如果有传高度,那么使用传入高度
+    // 如果没有传入,那么使用缓存高度
+    if (this.height) {
+      this.tableHeight = this.height;
+    } else {
+      this.tableHeight = this.paginaShow
+        ? window.localStorage.getItem("height") - 218 + "px"
+        : window.localStorage.getItem("height") - 180 + "px";
+    }
+  },
+  methods: {
+    // 表头缓存确认按钮
+    sessionStroageConfirm() {
+      let params = {
+        tableKey: this.sessionStroageName,
+        tableValue: localStorage.getItem(this.sessionStroageName),
+      };
+      // sysPageColumnUpdate(params).then((res) => {
+      //   if (res.code === 200) {
+      //     this.$baseMessage(res.msg, "success");
+      //     this.cardShow = false;
+      //   } else {
+      //     this.$baseMessage(res.msg, "error");
+      //   }
+      // });
+    },
+    // 表头缓存收起按钮
+    sessionStroageCancel() {
+      this.cardShow = false;
+    },
+    // 列排序往下
+    TableColumnDown(index) {
+      let temp = this.tableList.tr[index];
+      this.$set(this.tableList.tr, index, this.tableList.tr[index + 1]);
+      this.$set(this.tableList.tr, index + 1, temp);
+    },
+    // 列排序往上
+    TableColumnUp(index) {
+      let temp = this.tableList.tr[index];
+      this.$set(this.tableList.tr, index, this.tableList.tr[index - 1]);
+      this.$set(this.tableList.tr, index - 1, temp);
+    },
+
+    // table宽度拖拽
+    dragend(newWidth, oldWidth, column, event) {
+      let prop = column.property;
+      let tableItemWidth = [];
+      for (let i = 0; i &lt; this.tableList.tr.length; i++) {
+        if (this.tableList.tr[i].prop == prop) {
+          this.tableList.tr[i].width = parseInt(newWidth);
+        }
+        tableItemWidth.push({
+          prop: this.tableList.tr[i].prop,
+          width: this.tableList.tr[i].width,
+        });
+      }
+      localStorage.setItem(
+        this.sessionStroageName + "tableWidth",
+        JSON.stringify(tableItemWidth)
+      );
+      setTimeout(() => {
+        this.$refs.multipleTable.doLayout();
+      }, 100);
+    },
+
+    // 获取table排序/是否显示
+    getTableOrder() {
+      let localTableItem = localStorage.getItem(this.sessionStroageName);
+      if (localTableItem) {
+        localTableItem = localTableItem.split(",");
+        if (localTableItem.length) {
+          let temp = [];
+          for (let i = 0; i &lt; localTableItem.length; i++) {
+            if (localTableItem[i].indexOf("!") > -1) {
+              var item = localTableItem[i].split("!")[1];
+              for (let j = 0; j &lt; this.tableList.tr.length; j++) {
+                if (item == this.tableList.tr[j].index) {
+                  this.tableList.tr[j].isShow = false;
+                  temp.push(this.tableList.tr[j]);
+                }
+              }
+            } else {
+              for (let j = 0; j &lt; this.tableList.tr.length; j++) {
+                if (localTableItem[i] == this.tableList.tr[j].index) {
+                  this.tableList.tr[j].isShow = true;
+                  temp.push(this.tableList.tr[j]);
+                }
+              }
+            }
+          }
+          this.tableList.tr = temp;
+        }
+      }
+    },
+    divClick(e) {
+      e.stopPropagation();
+    },
+    // 获取table宽度
+    getTablColumneWidth() {
+      let tablColumnList = localStorage.getItem(
+        this.sessionStroageName + "tableWidth"
+      );
+      // 如果有这个缓存,说明修改过，就通过遍历的方法将width的值重新写到tr的width，达到修改列宽度的效果。
+      if (tablColumnList) {
+        tablColumnList = JSON.parse(tablColumnList);
+
+        for (let i = 0; i &lt; tablColumnList.length; i++) {
+          for (let j = 0; j &lt; this.tableList.tr.length; j++) {
+            if (tablColumnList[i].prop == this.tableList.tr[j].prop) {
+              // 直接通过下标修改是不能触发视图修改的。
+              let itemTemp = this.tableList.tr[j];
+              itemTemp.width = tablColumnList[i].width;
+              this.$set(this.tableList.tr, j, itemTemp);
+            }
+          }
+        }
+      }
+    },
+    checkboxT(row, index) {
+      if (row.checkeddisabled) {
+        return false;
+      }
+      if (row.checked == 0 &amp;&amp; index != 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    handleSizeChange(val) {
+      this.$emit("handleSizeChange", val);
+    },
+    handleCurrentChange(val) {
+      this.$emit("handleCurrentChange", val);
+    },
+    // select勾选
+    handleSelectionChange(val) {
+      this.$emit("checkboxList", val);
+    },
+    // 点击行触发的方法
+    clickRow(row) {
+      this.$emit("clickRow", row);
+    },
+  },
+
+  created() {
+    this.getTableOrder();
+    this.getTablColumneWidth();
+  },
+  watch: {
+    sessionStroageName() {
+      this.getTableOrder();
+    },
+    "tableList.tr": {
+      deep: true,
+      handler: function (newVal, oldVal) {
+        // code
+        let localTableItem = [];
+        for (let i = 0; i &lt; newVal.length; i++) {
+          if (newVal[i].isShow) {
+            localTableItem.push(newVal[i].index);
+          } else {
+            localTableItem.push("!" + newVal[i].index);
+          }
+        }
+        localStorage.setItem(this.sessionStroageName, localTableItem);
+        setTimeout(() => {
+          this.$refs.multipleTable.doLayout();
+        }, 100);
+      },
+    },
+  },
+  directives: {
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        // el.focus();
+      },
+    },
+  },
+};
+&lt;/script>
+
+&lt;style scoped>
+.el-card.box-card.is-always-shadow {
+  right: 1em;
+  position: absolute;
+  z-index: 10000;
+  height: auto;
+  max-height: 90%;
+  overflow: auto;
+}
+.el-table th {
+  text-align: left !important;
+}
+/* list:[
+  {url:'index'
+    child:[
+      {
+        url:child1,
+        uapdate:1,
+        select:1,
+        delete:0
+        children:[]
+      },
+      {
+
+        uapdate:1,
+        select:1,
+        delete:0
+      }
+    ]
+  },
+
+] */
+
+.text {
+  font-size: 14px;
+}
+
+.item {
+  margin-bottom: 12px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
+.box-card {
+  display: inline-block;
+  /* width: 230px; */
+}
+.tableColum {
+  text-align: right;
+  margin: 0.5em 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text.item .el-checkbox {
+  margin-right: 5px !important;
+}
+
+.akeTableParent {
+  height: 100%;
+  padding: 5px 13px 5px 5px;
+  background: #fff;
+  position: relative;
+  left: 0px;
+  transition: left 0.3s ease 0s, width 0.3s ease 0s;
+}
+.iconfont {
+  vertical-align: sub;
+  font-size: 20px;
+}
+.block {
+  display: flex;
+  margin-top: 0em;
+  text-align: right;
+  justify-content: flex-end;
+}
+&lt;/style>
+
+&lt;style>
+.el-card__header {
+  display: none;
+}
+&lt;/style>
+
+&lt;style lang="scss">
+.header-right {
+  display: flex;
+  align-items: center;
+  > * {
+    margin-left: 0.5em;
+  }
+}
+.el-tooltip__popper {
+  background: black !important;
+  color: white !important;
+}
+.popper__arrow {
+  // border-color: black !important;
+  // background: black !important;
+  // color: black !important;
+}
+&lt;/style></code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Mon Apr 03 2023 16:31:52 GMT+0800 (中国标准时间) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
